@@ -127,8 +127,11 @@ form {
     /* box-sizing: border-box; */
     position: relative;
     justify-content: center;
+    font-size: medium;
+    font-weight: bold;
+    color: #fff;
     padding: 5px;
-    width:90px;
+    width:100px;
     border: none;
     border-radius: 10px;
     background-color: #00dfc4;

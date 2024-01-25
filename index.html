@@ -16,34 +16,34 @@
     <form method="POST" action="https://script.google.com/macros/s/AKfycbyjO5uZZHkgRZWZ9if21SQWZbhvNF5CWxdnqOKBSyOlCRYL9t2MxRc_Ia01KA1XwNp8/exec" id="my-form">
   
     <div class="inputBox">
-        <input type="text" name="nama" required='required'>
+        <input id="nama" type="text" name="nama" required='required'>
         <span>Nama Lengkap</span>
     </div>
     <div class="inputBox">
-        <input type="text" name="asal" required='required'>
+        <input id="asal" type="text" name="asal" required='required'>
         <span>Asal Instansi/Perorangan</span>
     </div>
-    <div class="inputBox" id="telepon">
-        <input type="tel" name="phone" pattern="[0-9]{4}-[0-9]{3,4}-[0-9]{3,4}" required='required'>
+    <div class="inputBox">
+        <input id="telepon" type="tel" name="phone" pattern="[0-9]{4}-[0-9]{3,4}-[0-9]{3,4}" required='required'>
         <span>Nomor Telepon</span>
         <small style="color: #fff;display: block;">Format: 08XX-XXXX-XXXX</small>
     </div>
 
     <div class="inputBox">
-        <input type="email" name="email" required='required'>
+        <input id="email" type="email" name="email" required='required'>
         <span>Alamat Email</span>
     </div>
     <div class="inputBox">
-        <input name="keperluan" required='required'>
+        <input id="keperluan" name="keperluan" required='required'>
         <span>Keperluan</span>
     </div>
     <div class="inputBox">
-        <input name="pegawai" required='required'>
+        <input id="pegawai" name="pegawai" required='required'>
         <span>Pegawai Yg Ditemui</span>
     </div>
 
     <div >
-        <input type="submit" class="tombol" value="Kirim">
+        <button id="btn" type="submit" class="tombol">Kirim</button>
     </div>
 
     </form>
@@ -84,11 +84,52 @@
             showConfirmButton: false,
             timer: 1500
             });
+            form.reset();
             })
         });
         });
-
     </script>
+
+    <!-- <script>
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function handleClick(event) {
+        // if you are submitting a form (prevents page reload)
+        event.preventDefault();
+
+        const nama = document.getElementById('nama');
+        const asal = document.getElementById('asal');
+        const telepon = document.getElementById('telepon');
+        const email = document.getElementById('email');
+        const keperluan = document.getElementById('keperluan');
+        const pegawai = document.getElementById('pegawai');
+
+        // Send value to server
+        // console.log(firstNameInput.value);
+
+        //   clear input field
+        nama.value = '';
+        asal.value = '';
+        telepon.value = '';
+        email.value = '';
+        keperluan.value = '';
+        pegawai.value = '';
+        });
+
+    </script> -->
+
+    <!-- <script>
+        const form = document.getElementById('my-form');
+
+        form.addEventListener('submit', function handleSubmit(event) {
+        event.preventDefault();
+
+        // 👇️ Send data to the server here
+
+        // 👇️ Reset the form here
+        form.reset();
+        });
+    </script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
