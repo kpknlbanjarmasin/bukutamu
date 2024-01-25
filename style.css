@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 15px;
+    background: #1d2b3a;
+    overflow: hidden;
+}
+
+form {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputBox
+{
+   position: relative;
+   /* width: 350px;  */
+   justify-content: center;
+}
+
+.inputBox input 
+{
+    width: 300px;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: #1d2b3a;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.1s;
+}
+
+.inputBox span
+{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255,255,255,0.25);
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span
+{
+    color: #00dfc4;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+    letter-spacing: 0.2em;
+}
+
+.inputBox input:valid,
+.inputBox input:focus 
+{
+    border: 1px solid #00dfc4;   
+}
+
+.container{
+
+    /* width: 800px;
+    overflow: hidden; */
+}
+
+.container .text{
+    position: relative;
+    color:#00dfc4;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.container .text.first-text
+{
+    color: #fff;
+}
+
+.text.sec-text::before
+{
+ content: "";
+ position:absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: #1d2b3a;
+ border-left: 2px solid #00dfc4;
+ animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate {
+    40%, 60%{
+        left: 100%;
+    }
+    100%{
+        left: 0%;
+    }
+}
+
+.tombol
+{   
+    /* box-sizing: border-box; */
+    position: relative;
+    justify-content: center;
+    padding: 5px;
+    width:90px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00dfc4;
+    box-shadow: 0 0 5px #00dfc4,
+    0 0 25px #00dfc4;
+    
+}
+
+.tombol:hover
+{
+    box-shadow: 0 0 5px #00dfc4,
+    0 0 25px #00dfc4, 0 0 50px #00dfc4,
+    0 0 100px #00dfc4, 0 0 200px #00dfc4 
+}
+
+#telepon
+{
+    margin-bottom: 0px;
+}
+
+.kecil
+{   
+    margin: 0;
+    color: #fff;
+    display: inline-block;
+}

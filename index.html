@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Tamu</title>
+    <link rel="stylesheet" href="style.css">
+<body>
+    
+    <!-- <h1>Buku Tamu KPKNL Banjarmasin</h1> -->
+    <div class="container">
+        <span class="text first-text">Selamat Datang di</span>
+        <span class="text sec-text">KPKNL Banjarmasin</span>
+    </div>
+
+    <form method="POST" action="https://script.google.com/macros/s/AKfycbyjO5uZZHkgRZWZ9if21SQWZbhvNF5CWxdnqOKBSyOlCRYL9t2MxRc_Ia01KA1XwNp8/exec" id="my-form">
+  
+    <div class="inputBox">
+        <input type="text" name="nama" required='required'>
+        <span>Nama Lengkap</span>
+    </div>
+    <div class="inputBox">
+        <input type="text" name="asal" required='required'>
+        <span>Asal Instansi/Perorangan</span>
+    </div>
+    <div class="inputBox" id="telepon">
+        <input type="tel" name="phone" pattern="[0-9]{4}-[0-9]{3,4}-[0-9]{3,4}" required='required'>
+        <span>Nomor Telepon</span>
+        <small style="color: #fff;display: block;">Format: 08XX-XXXX-XXXX</small>
+    </div>
+
+    <div class="inputBox">
+        <input type="email" name="email" required='required'>
+        <span>Alamat Email</span>
+    </div>
+    <div class="inputBox">
+        <input name="keperluan" required='required'>
+        <span>Keperluan</span>
+    </div>
+    <div class="inputBox">
+        <input name="pegawai" required='required'>
+        <span>Pegawai Yg Ditemui</span>
+    </div>
+
+    <div >
+        <input type="submit" class="tombol" value="Kirim">
+    </div>
+
+    </form>
+    <script>
+        const text = document.querySelector('.sec-text');
+        const textLoad = () => {
+            setTimeout(()=>{
+                text.textContent = "KPKNL Banjarmasin";
+            },0);
+            setTimeout(()=>{
+                text.textContent = "DJKN";
+            },4000);
+            setTimeout(()=>{
+                text.textContent = "Kementerian Keuangan";
+            },8000);
+        }
+
+        textLoad();
+        setInterval(textLoad, 12000);
+    </script>
+
+    <script>
+        window.addEventListener("load", function() {
+        const form = document.getElementById('my-form');
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            const action = e.target.action;
+            fetch(action, {
+            method: 'POST',
+            body: data,
+            })
+            .then(() => {
+            alert("Success!");
+            })
+        });
+        });
+
+    </script>
+</body>
+</html>
