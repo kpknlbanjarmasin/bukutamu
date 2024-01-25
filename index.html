@@ -76,12 +76,20 @@
             method: 'POST',
             body: data,
             })
-            .then(() => {
-            alert("Success!");
+            .then(() => {                
+            Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Data Anda telah Disimpan",
+            showConfirmButton: false,
+            timer: 1500
+            });
             })
         });
         });
 
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
