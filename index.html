@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buku Tamu</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js'></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.min.js
+    "></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.min.css
+    " rel="stylesheet">
     <link rel="icon" href="love.png">
+</head>
 <body>
     
     <!-- <h1>Buku Tamu KPKNL Banjarmasin</h1> -->
@@ -65,7 +74,38 @@
         <button id="btn" type="submit" class="tombol">Kirim</button>
     </div>
 
+
     </form>
+
+    <!--awal survei kepuasan -->
+    <div class='form hidden'>
+        <div class='face'>
+          <svg viewbox='-10 -10 620 620'>
+            <g id='face' stroke-width='20' stroke='#4d4d4d'>
+              <circle cx='300' cy='300' r='300'></circle>
+            </g>
+            <path d='M100,350 Q300,450 500,350 Q300,550 100,350 z' fill='white' id='mouth' stroke-linejoin='round' stroke-width='20' stroke='#4d4d4d'></path>
+            <g fill='#4d4d4d'>
+              <!-- /%circle{cx: "300", cy: "200", r: "30"} -->
+              <!-- /%circle{cx: "500", cy: "200", r: "30"} -->
+              <path class='eye--left' d='M285 200 a 30 30 0 1 0 -1 0 z' fill='#4d4d4d' stroke-linejoin='round' stroke-width='20' stroke='#4d4d4d'></path>
+              <path class='eye--right' d='M515 200 a 30 30 0 1 0 -1 0 z' fill='#4d4d4d' stroke-linejoin='round' stroke-width='20' stroke='#4d4d4d'></path>
+            </g>
+          </svg>
+        </div>
+        <h3 class='heading'>How do you feel about our customer service?</h3>
+        <div class='sliding-list'>
+          <ul>
+            <li>Sangat Tidak Puas</li>
+            <li>Tidak Puas</li>
+            <li>Biasa Saja</li>
+            <li>Puas</li>
+            <li>Sangat Puas</li>
+          </ul>
+        </div>
+        <input class='slider' max='5' min='1' oninput='updateSlider(value)' type='range' value='5'>
+      </div>
+      <!--akhir survei kepuasan -->
     <script>
         const text = document.querySelector('.sec-text');
         const textLoad = () => {
@@ -101,7 +141,7 @@
             icon: "success",
             title: "Data Anda telah Disimpan",
             showConfirmButton: false,
-            timer: 1500
+            timer: 1000
             });
             form.reset();
             })
@@ -149,6 +189,8 @@
         form.reset();
         });
     </script> -->
+
+    <script src="script.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
