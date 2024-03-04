@@ -87,7 +87,7 @@
           }
         };
         results = [];
-        for (index = i = 0, ref = Object.keys(keyframes).length; (1 <= ref ? i <= ref : i >= ref); index = 1 <= ref ? ++i : --i) {
+        for (index = i = 0, ref = Object.keys(keyframes).length; (0 <= ref ? i <= ref : i >= ref); index = 0 <= ref ? ++i : --i) {
           startKeyframePosition = parseFloat(Object.keys(keyframes)[index]);
           endKeyframePosition = parseFloat(Object.keys(keyframes)[index + 1]);
           startKeyframeValue = keyframes[startKeyframePosition];
@@ -130,7 +130,7 @@
         var listIndex;
         input.rating = value;
         update();
-        listIndex = ~~(value);
+        listIndex = ~~(value/1.2);
         console.log(listIndex);
         return document.querySelector(".sliding-list ul").style.transform = `translateY(${-listIndex * 1.5}em)`;
       };

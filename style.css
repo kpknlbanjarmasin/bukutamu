@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    height: auto;
 }
 
 body
@@ -13,12 +14,14 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     text-align: center;
+    height: auto;
     flex-direction: column;
     gap: 15px;
     background: #1d2b3a;
     overflow: hidden;
+    overflow-y:scroll;
 }
 
 form {
