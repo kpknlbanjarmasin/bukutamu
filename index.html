@@ -23,7 +23,7 @@
         <span class="text sec-text">KPKNL Banjarmasin</span>
     </div>
 
-    <form method="POST" action="https://script.google.com/macros/s/AKfycbyjO5uZZHkgRZWZ9if21SQWZbhvNF5CWxdnqOKBSyOlCRYL9t2MxRc_Ia01KA1XwNp8/exec" id="my-form">
+    <form method="POST" action="https://script.google.com/macros/s/AKfycbyjO5uZZHkgRZWZ9if21SQWZbhvNF5CWxdnqOKBSyOlCRYL9t2MxRc_Ia01KA1XwNp8/exec" id="my-form" onsubmit="kirimkeWhatsapp()">
   
     <div class="inputBox">
         <input id="nama" autocomplete="off" type="text" name="nama" required='required'>
@@ -147,6 +147,13 @@
             })
         });
         });
+    </script>
+
+    <script>
+        function kirimkeWhatsapp(){
+            const urlToWhatsapp = `https://wa.me/62${telepon.value}?text=Yth. Bapak/Ibu,${nama.value}, Untuk meningkatkan kualitas pelayanan KPKNL Banjarmasin, kami mohon Bapak/Ibu mengisi survey pada link berikut https://s.id/KepuasanKPKNLBjm`;
+            window.open(urlToWhatsapp, "_blank");
+        }
     </script>
 
     <!-- <script>
